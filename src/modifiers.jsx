@@ -39,7 +39,7 @@ export default class Modifiers extends Component {
 }
 
 Modifiers.propTypes = {
-  onChange: React.PropTypes.func.isRequired,
-  modifiers: React.PropTypes.object,
-  active: React.PropTypes.string
+  onChange: PropTypes.func.isRequired,
+  modifiers: PropTypes.object,
+  active: PropTypes.string
 };

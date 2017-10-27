@@ -55,10 +55,10 @@ export default class Emoji extends Component {
 }
 
 Emoji.propTypes = {
-  ariaLabel: React.PropTypes.string,
-  name: React.PropTypes.string,
-  onSelect: React.PropTypes.func.isRequired,
-  shortname: React.PropTypes.string,
-  title: React.PropTypes.string,
-  role: React.PropTypes.string
+  ariaLabel: PropTypes.string,
+  name: PropTypes.string,
+  onSelect: PropTypes.func.isRequired,
+  shortname: PropTypes.string,
+  title: PropTypes.string,
+  role: PropTypes.string
 };

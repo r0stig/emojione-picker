@@ -21,8 +21,8 @@ export default class Modifier extends Component {
 }
 
 Modifier.propTypes = {
-  onClick: React.PropTypes.func.isRequired,
-  active: React.PropTypes.bool,
-  type: React.PropTypes.string.isRequired,
-  hex: React.PropTypes.string.isRequired
+  onClick: PropTypes.func.isRequired,
+  active: PropTypes.bool,
+  type: PropTypes.string.isRequired,
+  hex: PropTypes.string.isRequired
 };
