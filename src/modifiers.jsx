@@ -1,14 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import map from "lodash/map";
 import Modifier from "./modifier";
 
 export default class Modifiers extends Component {
-  static propTypes = {
-    onChange: React.PropTypes.func.isRequired,
-    modifiers: React.PropTypes.object,
-    active: React.PropTypes.string
-  };
-
   static defaultProps = {
     active: 0,
     modifiers: {
@@ -42,3 +37,9 @@ export default class Modifiers extends Component {
     );
   }
 }
+
+Modifiers.propTypes = {
+  onChange: React.PropTypes.func.isRequired,
+  modifiers: React.PropTypes.object,
+  active: React.PropTypes.string
+};

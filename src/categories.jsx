@@ -1,5 +1,6 @@
-import React, { PropTypes, Component } from "react";
+import React, { Component } from "react";
 import { AutoSizer, List } from "react-virtualized";
+import PropTypes from 'prop-types';
 import findIndex from "lodash/findIndex";
 import throttle from "lodash/throttle";
 import CategoryHeader from "./category-header";
@@ -12,22 +13,6 @@ const CATEGORY_HEADER_ROW_HEIGHT = 46;
 const EMOJI_ROW_HEIGHT = 32;
 
 export default class Categories extends Component {
-  static propTypes = {
-    rows: PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.shape({
-          category: PropTypes.object.isRequired,
-          id: PropTypes.string.isRequired
-        }),
-        PropTypes.arrayOf(PropTypes.object).isRequired
-      ])
-    ).isRequired,
-    modifier: PropTypes.string.isRequired,
-    onActiveCategoryChange: PropTypes.func.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onModifierChange: PropTypes.func.isRequired
-  };
-
   constructor(props, context) {
     super(props, context);
 
@@ -161,3 +146,19 @@ export default class Categories extends Component {
     );
   }
 }
+
+Categories.propTypes = {
+  rows: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        category: PropTypes.object.isRequired,
+        id: PropTypes.string.isRequired
+      }),
+      PropTypes.arrayOf(PropTypes.object).isRequired
+    ])
+  ).isRequired,
+  modifier: PropTypes.string.isRequired,
+  onActiveCategoryChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onModifierChange: PropTypes.func.isRequired
+};

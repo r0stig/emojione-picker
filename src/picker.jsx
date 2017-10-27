@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import emojione from "emojione";
 import store from "store";
 import each from "lodash/each";
@@ -12,21 +13,6 @@ import createEmojisFromStrategy from "./utils/createEmojisFromStrategy";
 import { defaultCategories } from "./constants";
 
 export default class Picker extends Component {
-  static propTypes = {
-    emojione: React.PropTypes.shape({
-      imageType: React.PropTypes.string,
-      sprites: React.PropTypes.bool,
-      imagePathSVGSprites: React.PropTypes.string
-    }),
-    search: React.PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.string
-    ]),
-    className: React.PropTypes.string,
-    onChange: React.PropTypes.func.isRequired,
-    categories: React.PropTypes.object
-  };
-
   static defaultProps = {
     search: "",
     categories: defaultCategories
@@ -204,3 +190,18 @@ export default class Picker extends Component {
     );
   }
 }
+
+Picker.propTypes = {
+  emojione: React.PropTypes.shape({
+    imageType: React.PropTypes.string,
+    sprites: React.PropTypes.bool,
+    imagePathSVGSprites: React.PropTypes.string
+  }),
+  search: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.string
+  ]),
+  className: React.PropTypes.string,
+  onChange: React.PropTypes.func.isRequired,
+  categories: React.PropTypes.object
+};
